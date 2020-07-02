@@ -8,20 +8,20 @@ import { Transactor } from "../helpers"
 
 export default function Faucet(props) {
 
-  const [address, setAddress] = useState()
+  const [address, setAddress] = useState();
 
-  let blockie
-  if(address && typeof address.toLowerCase=="function"){
+  let blockie;
+  if(address && typeof address.toLowerCase === "function"){
     blockie = (
         <Blockies seed={address.toLowerCase()} size={8} scale={3}/>
     )
   }else{
     blockie = (
-      <div></div>
+      <div/>
     )
   }
 
-  const localTx = Transactor(props.localProvider)
+  const localTx = Transactor(props.localProvider);
 
   return (
     <span>
@@ -39,7 +39,7 @@ export default function Faucet(props) {
                 localTx({
                   to: address,
                   value: ethers.utils.parseEther('0.01'),
-                })
+                });
                 setAddress("")
               }} shape="circle" icon={<SendOutlined />} />
             </Tooltip>
