@@ -4,8 +4,8 @@ import factory from "./abis/factory";
 import token from "./abis/token";
 
 export default {
-  erc20,
-  exchange,
-  factory,
-  token,
+    erc20,
+    exchange,
+    factory,
+    token,
 };

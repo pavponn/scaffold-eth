@@ -18,8 +18,9 @@ export default function useExchangePrice(mainnetProvider,pollTime) {
       setPrice(parseFloat(exchangeRate.div("100000000000000000"))/100)
     }
     getPrice();
-  }
-  usePoller(pollPrice,pollTime?pollTime:9777)
+  };
+
+  usePoller(pollPrice,pollTime?pollTime:9777);
 
   return price;
 }
