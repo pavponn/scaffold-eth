@@ -11,14 +11,14 @@ import TimeReport from './TimeReport.js'
 import VoteReport from './VoteReport.js'
 
 /// CHANGE THIS TO YOUR INFURA ID 
-const mainnetProvider = new ethers.providers.InfuraProvider("mainnet","2717afb6bf164045b5d5468031b93f87")
-const localProvider = mainnetProvider//new ethers.providers.JsonRpcProvider(process.env.REACT_APP_PROVIDER?process.env.REACT_APP_PROVIDER:"http://localhost:8545")
+const mainnetProvider = new ethers.providers.InfuraProvider("mainnet","2717afb6bf164045b5d5468031b93f87");
+const localProvider = mainnetProvider; //new ethers.providers.JsonRpcProvider(process.env.REACT_APP_PROVIDER?process.env.REACT_APP_PROVIDER:"http://localhost:8545")
 
 function App() {
 
   const [address, setAddress] = useState();
   const [injectedProvider, setInjectedProvider] = useState();
-  const price = useExchangePrice(mainnetProvider)
+  const price = useExchangePrice(mainnetProvider);
 
   return (
     <div className="App">
@@ -40,10 +40,8 @@ function App() {
           injectedProvider={injectedProvider}
           localProvider={localProvider}
         />
-        <div style={{display:"none"}}>
-          <TimeReport
-            mainnetProvider={mainnetProvider}
-          />
+        <div>
+          <TimeReport mainnetProvider={mainnetProvider}/>
           <VoteReport />
         </div>
       </div>
